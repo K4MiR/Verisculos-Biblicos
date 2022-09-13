@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Menu_Screen extends StatefulWidget {
   const Menu_Screen({Key? key}) : super(key: key);
@@ -11,35 +12,104 @@ class _menu_screenState extends State<Menu_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 90,
-              ),
-              SizedBox(
-                  width: 150,
-                  child: Image(image: AssetImage('assets/image/biblia2.png'))),
-              SizedBox(
-                height: 130,
-              ),
-              Column(
-                children: [
-                  ElevatedButton(onPressed: () => {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.orangeAccent,
-                        fixedSize: Size.fromWidth(200),
-
-                      ),
-                      child: Text('Leitura'))
-                ],
-              )
-            ],
-          ),
+        body: Stack(
+      children: [
+        Column(
+          children: [
+            Image(
+              image: AssetImage('assets/image/leitura.jpg'),
+              height: MediaQuery.of(context).size.height * 0.4,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              color: Colors.white,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.6,
+            )
+          ],
         ),
-      ),
-    );
+        Positioned(
+          top: 235,
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: 80,
+                        child: Image(
+                            image: AssetImage(
+                          'assets/image/jesus.png',
+                        )),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        width: 360,
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          'Deus é o dono de toda sabedoria. Sua sabedoria é maior que a sabedoria humana. '
+                          'A Bíblia está cheia de bons conselhos e ensinamentos, que podem lhe ajudar a agir '
+                          'com mais sabedoria.',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      ElevatedButton(
+                          onPressed: () => {},
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orangeAccent,
+                            elevation: 10,
+                            fixedSize: Size.fromWidth(300),
+                          ),
+                          child: Text(
+                            'LEITURA',
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 25,
+                            ),
+                          )),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                          onPressed: () => {},
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orangeAccent,
+                            elevation: 10,
+                            fixedSize: Size.fromWidth(250),
+                          ),
+                          child: Text(
+                            'VERSÃO',
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20,
+                            ),
+                          ))
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    ));
   }
 }

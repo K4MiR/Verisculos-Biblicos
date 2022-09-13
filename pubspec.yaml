@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  google_fonts:
   flutter_test:
     sdk: flutter
 
@@ -61,8 +62,8 @@ flutter:
   # assets:
 
   assets:
-    - assets/image/biblia.png
-    - assets/image/biblia2.png
+    - assets/image/
+    - assets/image/jesus.png
   # - images/a_dot_ham.jpeg:
 
 

@@ -42,7 +42,7 @@ class Leitura_ScreenState extends State<Leitura_Screen> {
               Padding(
                 padding: const EdgeInsets.all(50),
                 child: SizedBox(
-                  height: 210,
+                  height: 260,
                   child: Text(
                     versiCulos.frasegerada,
                     textAlign: TextAlign.justify,

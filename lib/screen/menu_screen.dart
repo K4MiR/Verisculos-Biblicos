@@ -68,7 +68,7 @@ class _menu_screenState extends State<Menu_Screen> {
                         height: 40,
                       ),
                       Container(
-                        width: 360,
+                        width: 340,
                         child: Text(
                           textAlign: TextAlign.center,
                           'Deus é o dono de toda sabedoria. Sua sabedoria é maior que a sabedoria humana. '

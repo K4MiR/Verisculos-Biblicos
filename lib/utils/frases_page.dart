@@ -173,6 +173,6 @@ class versiCulos{
     "E, quando Eu me for e vos tiver preparado um lugar, virei de novo e vos levarei para mim, a fim de que, onde Eu estiver, estejais vós também. João 14:3",
 
   ];
-  static var frasegerada = 'Clique para gerar uma frase!';
+  static var frasegerada = 'Clique para gerar um novo versículo!';
 }
 

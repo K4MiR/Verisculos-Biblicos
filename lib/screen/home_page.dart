@@ -67,7 +67,7 @@ class Leitura_ScreenState extends State<Leitura_Screen> {
                           primary: Colors.green,
                         ),
                         child: Text(
-                          "Nova Frase",
+                          "Novo Versículo",
                         )),
                   ),
                   SizedBox(

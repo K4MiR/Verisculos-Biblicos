@@ -1,8 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:frasesonday/utils/frases_page.dart';
-//import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter/services.dart';
 
 class Leitura_Screen extends StatefulWidget {
   const Leitura_Screen({Key? key}) : super(key: key);
@@ -12,18 +11,15 @@ class Leitura_Screen extends StatefulWidget {
 }
 
 class Leitura_ScreenState extends State<Leitura_Screen> {
+  get frasegerada => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black38,
-        title: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-            child: Text(
-              'Pão Diário',
-            ),
-          ),
+        title: Text(
+          'Pão Diário',
         ),
       ),
       body: Center(
@@ -37,7 +33,7 @@ class Leitura_ScreenState extends State<Leitura_Screen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: 180,
+                width: 100,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: Image(image: AssetImage('assets/image/biblia.png')),
@@ -46,7 +42,7 @@ class Leitura_ScreenState extends State<Leitura_Screen> {
               Padding(
                 padding: const EdgeInsets.all(50),
                 child: SizedBox(
-                  height: 150,
+                  height: 210,
                   child: Text(
                     versiCulos.frasegerada,
                     textAlign: TextAlign.justify,
@@ -60,30 +56,37 @@ class Leitura_ScreenState extends State<Leitura_Screen> {
               ),
               Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: gerarFrase,
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                      ),
-                      child: Text("Nova Frase")),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    height: 60,
+                    width: MediaQuery.of(context).size.width * 0.4,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: gerarFrase,
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orangeAccent,
+                          primary: Colors.green,
                         ),
                         child: Text(
-                          'Compartilhe',
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
+                          "Nova Frase",
                         )),
                   ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Clipboard.setData(
+                              ClipboardData(text: versiCulos.frasegerada));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey,
+                        ),
+                        child: Text(
+                          'Copiar Texto',
+                        )),
+                  ),
+
                 ],
               )
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frasesonday/screen/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Menu_Screen extends StatefulWidget {
@@ -36,7 +37,17 @@ class _menu_screenState extends State<Menu_Screen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20))),
+                    topRight: Radius.circular(20)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black38.withOpacity(0.5),
+                  spreadRadius: 9,
+                  blurRadius: 9,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+
+            ),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.7,
             child: Container(
@@ -65,6 +76,7 @@ class _menu_screenState extends State<Menu_Screen> {
                           'com mais sabedoria.',
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
+                            fontStyle: FontStyle.italic,
                           ),
                         ),
                       ),
@@ -72,7 +84,10 @@ class _menu_screenState extends State<Menu_Screen> {
                         height: 40,
                       ),
                       ElevatedButton(
-                          onPressed: () => {},
+                          onPressed: ()  {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) => const Leitura_Screen()));
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orangeAccent,
                             elevation: 10,

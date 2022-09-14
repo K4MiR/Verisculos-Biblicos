@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "737892839436",
+    "project_id": "pao-diario-aadc1",
+    "storage_bucket": "pao-diario-aadc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737892839436:android:cae12487ed480c9a7d3e29",
+        "android_client_info": {
+          "package_name": "com.cleberrobson.paodiario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737892839436-oubg1f2979sdv1bap3hda9q87chvj8nm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5_jDI2J50hFgqkcq9ZmvKo7vBQ8tUo0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737892839436-oubg1f2979sdv1bap3hda9q87chvj8nm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
